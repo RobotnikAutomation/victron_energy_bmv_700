@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="design_capacity" default="$(optenv DESIGN_CAPACITY 50)"/>
+    <arg name="port" default="/dev/ttyUSB_BATTERY"/>
+
+    <node type="battery_monitor_node.py" name="victron_energy_bmv_700" pkg="victron_energy_bmv_700" output="screen">
+      <param name="port" value="$(arg port)"/>
+      <param name="design_capacity" value="$(arg design_capacity)"/>
+    </node>
+</launch>
